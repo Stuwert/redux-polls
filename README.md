@@ -1,5 +1,10 @@
 <img src="https://tylermcginnis.com/tylermcginnis_glasses-300.png" width="300" align="right">
 
+## Next Action
+
+- Create the action creator/reducer combo to pull Initial Data for the application
+
+
 Redux Polls App
 ========
 
