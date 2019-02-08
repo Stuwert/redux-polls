@@ -1,9 +1,12 @@
 import { INITIALIZE_DATA } from '../actions/shared';
 
-const pollsReducer = (state = [], action) => {
+const pollsReducer = (state = {}, action) => {
   switch (action.type) {
     case INITIALIZE_DATA:
-      return state.polls;
+      return {
+        ...state,
+        ...action.polls,
+      };
     default:
       return state;
   }

@@ -4,13 +4,13 @@ import { handleInitialData } from '../actions/shared';
 
 class App extends Component {
   componentDidMount() {
-    const { dispatch, store } = this.props;
+    const { dispatch } = this.props;
 
     dispatch(handleInitialData());
-
-    console.log(store);
   }
   render() {
+    const { loading } = this.props;
+
     return (
       <div>
         Starter Code.
