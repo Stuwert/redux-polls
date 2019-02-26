@@ -60,7 +60,7 @@ const mapStateToProps = ({ authedUser, polls, users }) => {
   let answers = [];
 
   if (users[authedUser]) {
-    const answers = users[authedUser].answers;
+    answers = users[authedUser].answers;
   }
 
   const answered = answers.map((id) => polls[id])

@@ -1,34 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { handleInitialData } from '../actions/shared';
-import Dashboard from './Dashboard';
 import LoadingBar from 'react-redux-loading';
 
-class Leaderboard extends Component {
-  componentDidMount() {
-    this.props.dispatch(handleInitialData());
-  }
-  render() {
-    const { users } = this.props;
-    return (
-      <div>
-        <LoadingBar />
-        <ul>{
-          users.map((user) => (
-            <li className="user" key={user.id}>
-              <img src={user.avatarURL} alt={`Avatar for ${user.name}`} />
 
-              <div>
-                <h1>{user.name}</h1>
-                <p>{user.polls} Polls</p>
-                <p>{user.answers} Answers</p>
-              </div>
-            </li>
-          ))
-        }</ul>
-      </div>
-    )
-  }
+const Leaderboard = () => {
+  const { users } = this.props;
+  return (
+    <div>
+      <LoadingBar />
+      <ul>{
+        users.map((user) => (
+          <li className="user" key={user.id}>
+            <img src={user.avatarURL} alt={`Avatar for ${user.name}`} />
+
+            <div>
+              <h1>{user.name}</h1>
+              <p>{user.polls} Polls</p>
+              <p>{user.answers} Answers</p>
+            </div>
+          </li>
+        ))
+      }</ul>
+    </div>
+  )
 }
 
 const mapStateToProps = ({ users }) => {
