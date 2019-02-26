@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared';
 import Dashboard from './Dashboard';
-import loadingBar, { LoadingBar } from 'react-redux-loading';
+import Leaderboard from './Leaderboard';
+import LoadingBar from 'react-redux-loading';
 
 
 class App extends Component {
@@ -18,8 +19,8 @@ class App extends Component {
       <div>
         <LoadingBar />
         {this.props.loading === true
-          ? <div>We're loading</div>
-          : <Dashboard />
+          ? null
+          : <Leaderboard />
         }
       </div>
     )
